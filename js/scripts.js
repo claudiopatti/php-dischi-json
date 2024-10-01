@@ -5,6 +5,7 @@ createApp({
         return {
             message: 'ciao',
             cards: [],
+            showCardActive: false
         }
     },
     created () {
@@ -16,5 +17,18 @@ createApp({
                 
                 console.log(res.data);
             })
+    },
+    methods: {
+        showCard(i) {
+            this.cards[i].showCardActive = true;
+            console.log(this.cards[i]);
+            
+        },
+        showCardStop(i){
+            this.cards[i].showCardActive = false;
+            console.log(this.cards[i].showCardActive);
+
+
+        },
     }
 }).mount('#app');
